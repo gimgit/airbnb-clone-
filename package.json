@@ -1,0 +1,19 @@
+{
+  "name": "airbnb-cloning-backend",
+  "version": "1.0.0",
+  "description": "Clone coding project for week7 (Team4)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gimgit/airbnb-Cloning-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gimgit/airbnb-Cloning-backend/issues"
+  },
+  "homepage": "https://github.com/gimgit/airbnb-Cloning-backend#readme"
+}
