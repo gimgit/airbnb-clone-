@@ -6,17 +6,15 @@ const express = require("express");
 const path = require("path");
 const app = express();
 
-// const authRouter = require("./routes/auth/auth.route");
-// const Router = require("./routes/posts/router");
+const Router = require("./routes/router");
 
-
-app.use(express.static(path.join(__dirname, "..", "public")));
-//app.use(express.urlencoded()); 일단 주석처리
 app.use(express.json());
+// app.use(express.static(path.join(__dirname, "..", "public")));
+// app.use(express.urlencoded()); 일단 주석처리
 // app.use(passport.initialize());
 // passportConfig();
 
 // app.use("/api/auth", authRouter);
-// app.use("/api/posts", Router); 일단 주석처리
+app.use("/api", Router); 
 
 module.exports = app;
