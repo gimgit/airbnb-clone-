@@ -7,16 +7,36 @@ const { Location, Accomodation, Sequelize: { Op }, } = require("../../models");
 // }
 
 async function httpGetRoomlist(req, res){
-    const { locationId } = req.params;
-    const roomList =await Accomodation.findAll({ where: { locationId} });
-    res.status(200).json({ roomList: roomList  });
+
+    try{
+        const locationId = req.params.locationId;
+        console.log(locationId)
+        const roomList =await Accomodation.findAll({ where: { locationId } });
+        res.status(200).json({ data: roomList  });
+    
+    } catch (err) {
+        console.log(err);
+        res.status(400).send({
+            errorMessage: "요청한 데이터 형식이 올바르지 않습니다.",
+        });
+    }
 }
     
 async function httpGetRoomDetail(req, res){
-    const { locationId, accomoId } = req.params;
-    const room =await Location.findOne({ where: { userEmail, password } });
-    res.status(200).json({ });
+    try{
+        const { locationId, accomoId } = req.params;
+        console.log(locationId)
+        console.log(accomoId)
+        const room = await Accomodation.findOne({ where: { locationId, accomoId } });
+        res.status(200).json({ data : room });
+    } catch(err) {
+        console.log(err);
+        res.status(400).send({
+            errorMessage: "요청한 데이터 형식이 올바르지 않습니다.",
+        });
+    }
 }
+    
 
 
 module.exports = {
