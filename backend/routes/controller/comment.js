@@ -1,22 +1,22 @@
 const { Comment } = require("../../models");
 
-// 댓글 조회
-async function httpGetComments(req, res) {
-    const { accomoId } = req.params;
-    try {
-        const comments = await Comment.findAll({
-            where : {
-                accomoId : accomoId,
-            }
-        });
+// // 댓글 조회
+// async function httpGetComments(req, res) {
+//     const { accomoId } = req.params;
+//     try {
+//         const comments = await Comment.findAll({
+//             where : {
+//                 accomoId : accomoId,
+//             }
+//         });
 
-        res.status(200).json({ 
-            comments: comments 
-        });
-    } catch(err) {
-        console.log(err)
-    }
-}
+//         res.status(200).json({ 
+//             comments: comments 
+//         });
+//     } catch(err) {
+//         console.log(err)
+//     }
+// }
 
 // 댓글 등록
 async function httpAddComment(req, res) {
@@ -100,5 +100,5 @@ async function httpAddComment(req, res) {
 
 
 
-module.exports = { httpGetComments, httpAddComment, httpEditComment, httpDeleteComment };
+module.exports = { httpAddComment, httpEditComment, httpDeleteComment };
 
