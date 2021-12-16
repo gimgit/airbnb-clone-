@@ -1,9 +1,11 @@
-{
+require("dotenv").config();
+
+module.exports ={
   "development": {
     "username": "root",
-    "password": "1234",
+    "password": "airbnbpw00",
     "database": "database_development",
-    "host": "127.0.0.1",
+    "host": "db-airbnb.cmz3p6yjphvl.ap-northeast-2.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
@@ -15,7 +17,7 @@
   },
   "production": {
     "username": "root",
-    "password": null,
+    "password": "myp@$$w0rd",
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
