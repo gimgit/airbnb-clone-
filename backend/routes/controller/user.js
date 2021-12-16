@@ -5,9 +5,10 @@ const { User, Sequelize: { Op }, } = require("../../models");
 // const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
+// 유저 정보 조회
 async function httpGetUser(req, res) {
-    const { userId, userName } = req.user;
-    res.status(200).json({ userId: userId, userName: userName });
+    const { user } = res.locals;
+    res.status(200).json({ userId: user.userId, userName: user.userName });
 }
 
 // sign-in
@@ -32,7 +33,7 @@ async function httpLogin(req, res) {
             return;
         }
         // user 정보 일치
-        const token = jwt.sign({ userId: user.userId }, "my-secret-key");
+        const token = jwt.sign({ userId: user.userId }, process.env.SECRET_KEY);
         res.send({
             token,
             user: { userId: user.userId, userEmail: user.userEmail, userName: user.userName },
@@ -45,7 +46,6 @@ async function httpLogin(req, res) {
         });
     }
 
-    // return res.status(200).json({ ok: true, msg: "" });
 }
 
 // sign-up
@@ -70,12 +70,11 @@ async function httpAddUser(req, res) {
             });
             return;
         }
-        
 
         // 암호화 추가하기
 
         // 패스워드 양식 확인
-        if (password.length < 7 == true) {
+        if (password.length < 6 == true) {
             res.status(400).send({
                 errorMessage: "패스워드는 6자 이상으로 입력해주세요.",
             });
@@ -106,7 +105,7 @@ async function httpAddUser(req, res) {
         // 회원가입 정보를 db에 저장
         await User.create({ userEmail, userName, password }); // 비동기 함수라 await 붙여줌, save() 안해줘도 되기 때문에 지웠음
 
-        res.status(201).send({});
+        res.status(201).send({}); // post created 201 반환
 
     } catch (err) {
         console.log(err);
