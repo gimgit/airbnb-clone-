@@ -1,6 +1,6 @@
 const Router = require("express").Router();
 
-const  authorization  = require("../middlewares/middlewares");
+const authorization = require("../middlewares/middlewares");
 
 const { httpGetUser, httpLogin, httpAddUser } = require("./controller/user");
 const { httpGetRoomlist, httpGetRoomDetail } = require("./controller/rooms");

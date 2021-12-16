@@ -1,15 +1,14 @@
-
 const { Accomodation, Sequelize: { Op }, } = require("../../models");
 const { Comment } = require("../../models");
 
 // async function httpGetLocation(req, res){
-    // const location =await Location.findOne({ where: { loctionId, locationName } });
-    // res.status(200).json({ location: location  });
+// const location =await Location.findOne({ where: { loctionId, locationName } });
+// res.status(200).json({ location: location  });
 // }
 
-async function httpGetRoomlist(req, res){
+async function httpGetRoomlist(req, res) {
 
-    try{
+    try {
         const locationId = req.params.locationId;
         console.log(locationId)
         const roomList =await Accomodation.findAll({ where : { locationId } });
@@ -22,9 +21,9 @@ async function httpGetRoomlist(req, res){
         });
     }
 }
-    
-async function httpGetRoomDetail(req, res){
-    try{
+
+async function httpGetRoomDetail(req, res) {
+    try {
         const { locationId, accomoId } = req.params;
         console.log(locationId)
         console.log(accomoId)
@@ -38,7 +37,7 @@ async function httpGetRoomDetail(req, res){
         });
     }
 }
-    
+
 
 
 module.exports = {
