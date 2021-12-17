@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
-
+    location: DataTypes.STRING,
     accomoImg: DataTypes.STRING,
     accomoAdress: DataTypes.STRING,
     accomoTitle: DataTypes.STRING,

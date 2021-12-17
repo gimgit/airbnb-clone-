@@ -8,6 +8,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      location: {
+        tyep: Sequelize.STRING
+      },
       locationId: {
         type: Sequelize.STRING
       },
