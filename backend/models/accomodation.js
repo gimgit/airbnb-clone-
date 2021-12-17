@@ -15,17 +15,19 @@ module.exports = (sequelize, DataTypes) => {
   };
   Accomodation.init({
 
-    accomoId:{
+    accomoId: {
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
     location: DataTypes.STRING,
+    locationId: DataTypes.INTEGER,
     accomoImg: DataTypes.STRING,
     accomoAdress: DataTypes.STRING,
     accomoTitle: DataTypes.STRING,
     accomoInfo1: DataTypes.STRING,
     accomoInfo2: DataTypes.STRING,
     accomoRating: DataTypes.INTEGER
+
   }, {
     sequelize,
     modelName: 'Accomodation',

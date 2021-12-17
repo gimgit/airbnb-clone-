@@ -1,4 +1,7 @@
 'use strict';
+
+const { sequelize } = require("../models");
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('Accomodations', {
@@ -9,7 +12,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       location: {
-        tyep: Sequelize.STRING
+        tyep: sequelize.STRING
       },
       locationId: {
         type: Sequelize.STRING
