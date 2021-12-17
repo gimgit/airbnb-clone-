@@ -51,11 +51,11 @@ async function httpLogin(req, res) {
 // sign-up
 async function httpAddUser(req, res) {
     try {
-        const { userEmail, password, confirmPassword, userName } = req.body;
+        const { userEmail, password, passwordConfirm, userName } = req.body;
         console.log(req.body);
 
         // 공백 확인
-        if (userEmail === "" || password === "" || confirmPassword === "" || userName === "") {
+        if (userEmail === "" || password === "" || passwordConfirm === "" || userName === "") {
             res.status(412).send({
                 errorMessage: "빠짐 없이 입력해주세요.",
             });
@@ -82,7 +82,7 @@ async function httpAddUser(req, res) {
         }
 
         // 패스워드 불일치(입력, 재입력 칸)
-        if (password !== confirmPassword) {
+        if (password !== passwordConfirm) {
             res.status(400).send({
                 errorMessage: "패스워드가 패스워드 확인란과 동일하지 않습니다.",
             });
