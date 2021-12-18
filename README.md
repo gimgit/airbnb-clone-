@@ -10,7 +10,7 @@ __Notion__ : https://tangible-gander-9ea.notion.site/airbnb-Team-4-0d26d293f8124
 
 __1) 프로젝트 주제__
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Airbnb 클론코딩 : https://www.airbnb.co.kr/ <br> <!--링크 수정해야함-->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Airbnb 클론코딩 : http://zhiyeonyi.shop.s3-website.ap-northeast-2.amazonaws.com/ <br> <!--링크 수정해야함-->
 
 
 __2) 팀원소개🧙‍♂️__ 
@@ -86,6 +86,6 @@ __3) 코멘트 CRUD__
 
 # 4. 데모영상
 <!--링크 수정해야함-->
-- 📺  **Our Youtube link ->**  [![Youtube Badge](https://img.shields.io/badge/Youtube-ff0000?style=flat&logo=youtube&link=https://www.youtube.com/)](https://www.youtube.com/)   
+- 📺  **Our Youtube link ->**  [![Youtube Badge](https://img.shields.io/badge/Youtube-ff0000?style=flat&logo=youtube&link=https://www.youtube.com/watch?v=Gl6DlLB67Rg)](https://www.youtube.com/watch?v=Gl6DlLB67Rg)   
 
 
